@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
         redirect_to @article
       else
         flash.now[:danger] = 'Article has not been updated'
-        render 'new'
+        render :edit
       end
     end
   end
