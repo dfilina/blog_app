@@ -1,49 +1,50 @@
-<h2 class="text-center">Log in</h2>
-
 <div class="row">
-  <div class="col-md-12">
-    <%= form_for(resource, as: resource_name, :html => {class: 'form-horizontal', role: 'form'}, 
-      url: session_path(resource_name)) do |f| %>
-      
-      <div class="form-group">
-        <div class="control-label col-md-3">
-          <%= f.label :email %><br />
-        </div>
-        <div class="col-md-9">
-          <%= f.email_field :email, class: 'form-control', autofocus: true %>
-        </div>  
-      </div>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+  	  <div class="panel-heading">
+  			<strong> Sign in to continue</strong>
+  		</div>
+  		<div class="panel-body">
+        <%= form_for(resource, as: resource_name, :html => {class: 'form-horizontal', role: 'form'}, 
+          url: session_path(resource_name)) do |f| %>
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <%= f.email_field :email, class: 'form-control', autofocus: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-lock"></i>
+                </span>
+                 <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+              </div>
+            </div>
     
-      <div class="form-group">
-        <div class="control-label col-md-3">
-          <%= f.label :password %>
-        </div>
-        <div class="col-md-9">
-          <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-        </div>  
-      </div>
-      
-      <% if devise_mapping.rememberable? -%>
-        <div class="form-group col-md-6 col-md-offset-3">
-          <div class="checkbox">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>  
-        </div>
-      <% end -%>
-      
-      <div class="form-group actions">
-        <div class="col-md-offset-3 col-md-9">
-          <%= f.submit "Log In", class: 'btn btn-primary btn-lg' %>
+            <% if devise_mapping.rememberable? -%>
+              <div class="form-group text-center">
+                <div class="checkbox">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me, id: 'remember-label' %>
+                </div>  
+              </div>  
+            <% end -%>
+            
+            <div class="form-group actions">
+              <%= f.submit "Log In", class: 'btn btn-primary btn-lg btn-block' %>
+            </div>
+        <% end %>
+          </div>
         </div>
       </div>
-    <% end %>
-    
-    <div class="form-group">
-      <div class="col-md-offset-3 col-md-9">
+      <div class="panel-footer">
         <%= render "devise/shared/links" %>
-      </div>
-    </div>  
-
-  </div>
-</div>
+      </div> 
+    </div>
+  </div>  
+</div>  
