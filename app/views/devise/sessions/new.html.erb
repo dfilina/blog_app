@@ -2,19 +2,20 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
   	  <div class="panel-heading">
-  			<strong> Sign in to continue</strong>
+  			<strong>Sign In</strong>
   		</div>
   		<div class="panel-body">
         <%= form_for(resource, as: resource_name, :html => {class: 'form-horizontal', role: 'form'}, 
           url: session_path(resource_name)) do |f| %>
         <div class="row">
-          <div class="col-sm-12 col-md-10 col-md-offset-1">
+          <div class="col-md-10 col-md-offset-1">
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">
                   <i class="glyphicon glyphicon-user"></i>
                 </span>
-                <%= f.email_field :email, class: 'form-control', autofocus: true %>
+                <%= f.email_field :email, class: 'form-control', 
+                  autofocus: true, placeholder: 'Email' %>
               </div>
             </div>
             <div class="form-group">
@@ -22,7 +23,8 @@
                 <span class="input-group-addon">
                   <i class="glyphicon glyphicon-lock"></i>
                 </span>
-                 <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+                 <%= f.password_field :password, class: 'form-control', 
+                   autocomplete: "off", placeholder: 'Password' %>
               </div>
             </div>
     
@@ -36,7 +38,7 @@
             <% end -%>
             
             <div class="form-group actions">
-              <%= f.submit "Log In", class: 'btn btn-primary btn-lg btn-block' %>
+              <%= f.submit "Login", class: 'btn btn-primary btn-lg btn-block' %>
             </div>
         <% end %>
           </div>
