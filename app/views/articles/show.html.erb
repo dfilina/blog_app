@@ -6,7 +6,7 @@
     <%= @article.created_at.strftime("%b %d, %Y") %>
   </div>
   <div class="article-body">
-    <%= @article.body %>
+    <%= @article.body.html_safe %>
   </div>
   <% if user_signed_in? && current_user == @article.user %>
     <%= link_to 'Edit Article', edit_article_path(@article), 
